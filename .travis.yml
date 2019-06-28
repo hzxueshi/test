@@ -7,7 +7,7 @@ cache:
   directories:
     - node_modules
 after_script:
-  - touch README.MD
+  - touch README.md
   - echo `date +"%Y-%m-%d %H-%m-%s"` >> README.MD
   - git init
   - git config user.name "hzxueshi"
