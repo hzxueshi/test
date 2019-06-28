@@ -1,0 +1,17 @@
+language: node_js
+node_js:
+  - "8"
+script: 
+  - echo "hello"
+cache:
+  directories:
+    - node_modules
+after_script:
+  - touch README.MD
+  - echo `date +"%Y-%m-%d %H-%m-%s"` >> README.MD
+  - git init
+  - git config user.name "hzxueshi"
+  - git config user.email "hzxueshi@hzxueshi.com"
+  - git add .
+  - git commit -m "automated build hzxuehsi"
+  - git push --quiet --force https://${REPO_TOKEN}@github.com/hzxueshi/test.git master
